@@ -12,9 +12,10 @@ router.get('/author', function(req,res){
 	res.render('author', {title: 'Preguntas'});
 });
 
-/*GET controladores pregunta y respuesta*/
-router.get('/quizes/question', quizController.question);
-router.get('/quizes/answer', quizController.answer);
+/*GET controladores pregunta y respuesta. Definicion de rutas de quizes*/ 
+router.get('/quizes',                quizController.index);
+router.get('/quizes/:quizId(\\d+)', quizController.show);
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 
 module.exports = router;
