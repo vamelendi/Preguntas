@@ -8,7 +8,7 @@
 <body>
 
 <form method='get' action="/quizes/<%= quiz.id %>/answer">
-Pregunta <%= quiz.pregunta %> <br>
+<%= quiz.pregunta %> <br>
 <input type='text' name='respuesta' value='' placeholder="Introduzca una respuesta"/> <br/>
 <input type='submit' value='Enviar'/>
 </form>
