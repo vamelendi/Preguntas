@@ -1,3 +1,10 @@
+<div>
+<form method="get" action="/quizes">
+<label for ="buscar" class="rem">Buscar:</label>
+<input type="text" id="buscar" name='search' value ="" placeholder="Para mostrar todas pulsar buscar"/>
+<button type="submit">Buscar</button>
+</div>
+<div>
 <table>
  <% var i; for (i=0;i < quizes.length; i++){ %>
 	<tr>
@@ -15,3 +22,4 @@
 
 </table>
 <a href="/quizes/new"><button type="button">Crear Pregunta</button></a>
+</div>
