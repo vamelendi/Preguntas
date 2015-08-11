@@ -1,5 +1,5 @@
 //Definicion del modelo de la base de datos Quiz
-
+// Deficion del modelo de  la tabla Quiz
 module.exports = function(sequelize, DataTypes)
 			{
        			   return sequelize.define('Quiz',
