@@ -3,10 +3,13 @@
 module.exports = function(sequelize,DataTypes){
 	return sequelize.define("Comment",
 				{texto: {
-				 type:DataTypes.STRING,
-				 validate: {notEmpty:{msg:"vaya! te has olvidado comentarlo"}}
-				  }
+				 	type:DataTypes.STRING,
+				 	validate: {notEmpty:{msg:"vaya! te has olvidado comentarlo"}}
+				 },
+				 publicado: {
+				 	type:DataTypes.BOOLEAN,
+			   		defaultValue: false
+				 }
 				}
 			       );
-
 }
