@@ -1,0 +1,5 @@
+mkdir certs
+cd certs
+openssl genrsa -out preguntas-vitor-key.pem 2048
+openssl req -new -sha256 -key preguntas-vitor-key.pem -out preguntas-vitor-csr.pem
+openssl x509 -req -in preguntas-vitor-csr.pem -signkey preguntas-vitor-key.pem -out preguntas-vitor-cert.pem
