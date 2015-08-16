@@ -41,7 +41,26 @@ app.use (function(req,res,next){
 	//hacer visible req.session en las vistas
 	res.locals.session = req.session;
 	next();
-});	
+});
+
+app.use(function(req,res,next){
+ if (req.session.user){
+	if(!req.session.stamp){
+	   	req.session.stamp=new Date().getTime();		
+	}else{
+		ahora=new Date().getTime();
+		if ((ahora - req.session.stamp)>120000){ 
+			errors=(req.session.errors || 'sesion caducada..!');			
+			req.session.errors={};
+			req.session.stamp=null;
+			res.locals.session.user=undefined;
+			res.render('sessions/new',{errors: errors});
+		}else{req.session.stamp=new Date().getTime();}
+	     }
+ }
+ next();
+});
+	
 app.use('/', routes);
 
 
